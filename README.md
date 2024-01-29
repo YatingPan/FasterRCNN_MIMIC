@@ -34,7 +34,11 @@ Scripts in `object_detector/src/object_detector` are based on PyTorch's Faster R
 
 - `image_list.py`: Adjusted to handle the consistent image size (256×256) of the MIMIC-CXR JPG images.
 - `rpn.py` and `roi_heads.py`: Modified to add loss calculation during evaluation.
-- `object_detector.py`: Tailored for the Chest Imagenome dataset, including fixed class number (30) and custom bbox coordinate calculation.
+- `object_detector.py`: Tailored for the Chest Imagenome dataset.
+    - Uses a ResNet50 model pre-trained on chest x-rays.
+    - Accepts grayscale images (1 channels instead of 3).
+    - The backbone ends before the final two layers (AdaptiveAvgPool2d and Linear) of the standard ResNet50, focusing only on feature extraction.
+    - Expects tensors of shape [batch_size, 1, H, W], where H and W are typically 512.
 - `training_script_object_detector.py`: Script for training and evaluating the object detector. Outputs include a "runs" folder for saving checkpoints.
 
 ## Usage
