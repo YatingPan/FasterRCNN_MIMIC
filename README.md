@@ -33,6 +33,7 @@ Scripts under `object_detector/src/dataset` are used for processing and creating
 Scripts in `object_detector/src/object_detector` are based on PyTorch's Faster R-CNN with modifications for the Chest Imagenome dataset:
 
 - `image_list.py`: Adjusted to handle the consistent image size (256×256) of the MIMIC-CXR JPG images.
+- `image_dataset.py`: Resize image size from 256×256 to 512×512 for customized anchors. 
 - `rpn.py` and `roi_heads.py`: Modified to add loss calculation during evaluation.
 - `object_detector.py`: Tailored for the Chest Imagenome dataset.
     - Uses a ResNet50 model pre-trained on chest x-rays.
