@@ -81,10 +81,10 @@ def main() -> None:
     path_to_json_files = os.path.join(path_chest_imagenome, "silver_dataset", "scene_graph")
     faulty_coord_data, faulty_name_data = find_faulty_data(path_to_json_files)
 
-    path_faulty_coord_csv = os.path.join(path_chest_imagenome, "silver_dataset", "splits", "faulty_bbox_coordinates.csv")
+    path_faulty_coord_csv = os.path.join("../../../datasets", "faulty_bbox_coordinates.csv")
     write_rows_in_csv_file(faulty_coord_data, path_faulty_coord_csv, ["subject_id", "study_id", "image_id", "path", "object", "bbox_coordinates"])
 
-    path_faulty_name_csv = os.path.join(path_chest_imagenome, "silver_dataset", "splits", "faulty_bbox_names.csv")
+    path_faulty_name_csv = os.path.join("../../../datasets", "faulty_bbox_names.csv")
     write_rows_in_csv_file(faulty_name_data, path_faulty_name_csv, ["subject_id", "study_id", "image_id", "path", "object", "bbox_name"])
 
 if __name__ == '__main__':
