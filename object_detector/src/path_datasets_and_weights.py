@@ -30,3 +30,4 @@ path_mimic_cxr_jpg = "/home/user/yatpan/yatpan/rgrg/datasets/mimic-cxr-jpg"
 path_full_dataset = "/home/user/yatpan/yatpan/rgrg/datasets/created_dataset_new"
 # this will be created when running the object_detector
 path_runs_object_detector = "/home/user/yatpan/yatpan/rgrg/runs/object_detector"
+
